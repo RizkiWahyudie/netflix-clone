@@ -6,7 +6,8 @@ import MovieList from "@/components/movieList";
 import useMovieList from "@/hooks/useMovieList";
 import useFavorites from "@/hooks/useFavorites";
 import useInfoModalStore from "@/hooks/useInfoModalStore";
-import InfoModal from '@/components/InfoModal';
+import InfoModal from "@/components/InfoModal";
+import Head from "next/head";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -29,6 +30,10 @@ export default function Home() {
   const { isOpen, closeModal } = useInfoModalStore();
   return (
     <>
+      <Head>
+        <title>Netflix Clone</title>
+        <link rel="shortcut icon" href="/logoN.png" />
+      </Head>
       <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <Billboard />

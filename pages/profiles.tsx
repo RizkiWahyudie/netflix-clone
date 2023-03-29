@@ -8,6 +8,7 @@ import blue from "../public/images/default-blue.png";
 import red from "../public/images/default-red.png";
 import slate from "../public/images/default-slate.png";
 import green from "../public/images/default-green.png";
+import Head from "next/head";
 
 const images = [blue, red, slate, green];
 
@@ -62,18 +63,24 @@ const Profiles = () => {
   }, [router]);
 
   return (
-    <div className="flex items-center h-full justify-center">
-      <div className="flex flex-col">
-        <h1 className="text-3xl md:text-6xl text-white text-center">
-          Who&#39;s watching?
-        </h1>
-        <div className="flex items-center justify-center gap-8 mt-10">
-          <div onClick={() => selectProfile()}>
-            <UserCard name={currentUser?.name} />
+    <>
+      <Head>
+        <title>Netflix Clone</title>
+        <link rel="shortcut icon" href="/logoN.png" />
+      </Head>
+      <div className="flex items-center h-full justify-center">
+        <div className="flex flex-col">
+          <h1 className="text-3xl md:text-6xl text-white text-center">
+            Who&#39;s watching?
+          </h1>
+          <div className="flex items-center justify-center gap-8 mt-10">
+            <div onClick={() => selectProfile()}>
+              <UserCard name={currentUser?.name} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
