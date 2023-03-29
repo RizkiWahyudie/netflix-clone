@@ -48,12 +48,12 @@ export default function Auth() {
   }, [email, name, password, login]);
 
   return (
-    <div className="relative h-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-      <div className="bg-black w-full h-full lg:bg-opacity-50">
+    <div className="relative min-h-screen h-fit bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+      <div className="bg-black w-full min-h-screen h-fit lg:bg-opacity-50">
         <nav className="px-12 py-5">
           <Image src={logo} alt="logo" className="w-28" />
         </nav>
-        <div className="flex justify-center">
+        <div className="flex justify-center pb-10">
           <div className="bg-black bg-opacity-75 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
             <h2 className="text-white text-4xl mb-8 font-semibold">
               {variant === "login" ? "Sign In" : "Register"}
